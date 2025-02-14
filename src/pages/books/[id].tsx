@@ -1,8 +1,10 @@
+// pages/books/[id].tsx
 import { useRouter } from "next/router";
 import { useQuery } from "@tanstack/react-query";
 import styled from "@emotion/styled";
 import Link from "next/link";
 import Button from "@/components/atoms/Button";
+import { useState } from "react";
 import { booksData } from "@/mocks/booksData";
 import { Book } from "@/types/book";
 
@@ -20,16 +22,33 @@ const BookDetailPage = () => {
   const { id } = router.query;
   const bookId = Number(id);
 
-  // useQuery 타입 수정
   const {
     data: book,
     isLoading,
     error,
-  } = useQuery({
+  } = useQuery<Book, Error>({
     queryKey: ["book", bookId],
     queryFn: () => fetchBook(bookId),
     enabled: !!bookId,
   });
+
+  // 재고 수량 상태 (모의 데이터로 관리)
+  const [quantity, setQuantity] = useState<number>(1);
+
+  const handleDecrement = () => {
+    if (quantity > 0) setQuantity(quantity - 1);
+  };
+
+  const handleIncrement = () => {
+    setQuantity(quantity + 1);
+  };
+
+  const handleRemove = () => {
+    if (confirm("이 책을 삭제하시겠습니까?")) {
+      alert("책이 삭제되었습니다.");
+      router.push("/books");
+    }
+  };
 
   if (isLoading) return <p>로딩 중...</p>;
   if (error)
@@ -38,8 +57,6 @@ const BookDetailPage = () => {
         에러 발생: {error instanceof Error ? error.message : "알 수 없는 에러"}
       </p>
     );
-
-  // book이 없을 경우 처리 추가
   if (!book) return <p>책 정보를 찾을 수 없습니다.</p>;
 
   return (
@@ -53,11 +70,23 @@ const BookDetailPage = () => {
           <Title>{book.title}</Title>
           <Author>{book.author}</Author>
           <Price>{book.price.toLocaleString()} 원</Price>
+
+          {/* 재고 수량 및 조절 컨트롤 */}
+          <InventorySection>
+            <InventoryLabel>재고 수량:</InventoryLabel>
+            <QuantityControls>
+              <Button onClick={handleDecrement}>-</Button>
+              <QuantityDisplay>{quantity}</QuantityDisplay>
+              <Button onClick={handleIncrement}>+</Button>
+            </QuantityControls>
+          </InventorySection>
+          <Button onClick={handleRemove}>책 제거</Button>
         </Info>
       </DetailCard>
     </Container>
   );
 };
+
 const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
@@ -145,6 +174,34 @@ const Price = styled.p`
     font-weight: normal;
     color: #666;
   }
+`;
+
+const InventorySection = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
+
+const InventoryLabel = styled.span`
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+`;
+
+const QuantityControls = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+`;
+
+const QuantityDisplay = styled.span`
+  min-width: 50px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 8px;
+  background-color: #e2e8f0;
+  border-radius: 4px;
 `;
 
 export default BookDetailPage;
