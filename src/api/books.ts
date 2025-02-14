@@ -28,6 +28,6 @@ export const useBooks = (page: number, title: string, author: string) => {
   return useQuery({
     queryKey: ["books", page, title, author],
     queryFn: () => fetchBooks(page, title, author),
-    placeholderData: (previousData) => previousData ?? [], // 이전 데이터 유지
+    placeholderData: (previousData) => previousData ?? [],
   });
 };

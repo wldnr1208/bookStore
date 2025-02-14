@@ -1,4 +1,3 @@
-// src/mocks/booksData.ts
 import { Book } from "@/types/book";
 
 export const booksData: Book[] = [
@@ -8,7 +7,6 @@ export const booksData: Book[] = [
     author: "F. Scott Fitzgerald",
     coverImage:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR4bsVGTsF-32Ku3r5pOVik8wyUxu1vs3C0Q&s",
-    price: 12000,
   },
   {
     id: 2,
@@ -16,7 +14,6 @@ export const booksData: Book[] = [
     author: "Harper Lee",
     coverImage:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsOiB0ty4pRdmruWUqQ1SY5XvqLnwKRJvgFA&s",
-    price: 15000,
   },
   {
     id: 3,
@@ -24,7 +21,6 @@ export const booksData: Book[] = [
     author: "George Orwell",
     coverImage:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTENlgwk8aw_hekz5GuecTnz0pMNoYKib2cfw&s",
-    price: 13000,
   },
   {
     id: 4,
@@ -32,7 +28,6 @@ export const booksData: Book[] = [
     author: "Jane Austen",
     coverImage:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8_Ncn8BAvACurh-KAFs4aSJ-doFR2TkzEOg&s",
-    price: 11000,
   },
   {
     id: 5,
@@ -40,7 +35,6 @@ export const booksData: Book[] = [
     author: "Herman Melville",
     coverImage:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR4bsVGTsF-32Ku3r5pOVik8wyUxu1vs3C0Q&s",
-    price: 14000,
   },
   {
     id: 6,
@@ -48,7 +42,6 @@ export const booksData: Book[] = [
     author: "Leo Tolstoy",
     coverImage:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAN4xvt1h93zTvP8axVuNKy3VH5ZNBKOj-0g&s",
-    price: 20000,
   },
   {
     id: 7,
@@ -56,7 +49,6 @@ export const booksData: Book[] = [
     author: "Homer",
     coverImage:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTENlgwk8aw_hekz5GuecTnz0pMNoYKib2cfw&s",
-    price: 9000,
   },
   {
     id: 8,
@@ -64,7 +56,6 @@ export const booksData: Book[] = [
     author: "William Shakespeare",
     coverImage:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ78BrNxSfJ_VyKnmbBorhlHhnrnW0IPzbJbg&s",
-    price: 8000,
   },
   {
     id: 9,
@@ -72,7 +63,6 @@ export const booksData: Book[] = [
     author: "J.D. Salinger",
     coverImage:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR4bsVGTsF-32Ku3r5pOVik8wyUxu1vs3C0Q&s",
-    price: 12000,
   },
   {
     id: 10,
@@ -80,7 +70,6 @@ export const booksData: Book[] = [
     author: "Aldous Huxley",
     coverImage:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTENlgwk8aw_hekz5GuecTnz0pMNoYKib2cfw&s",
-    price: 13000,
   },
   {
     id: 11,
@@ -88,7 +77,6 @@ export const booksData: Book[] = [
     author: "J.R.R. Tolkien",
     coverImage:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAN4xvt1h93zTvP8axVuNKy3VH5ZNBKOj-0g&s",
-    price: 25000,
   },
   {
     id: 12,
@@ -96,7 +84,6 @@ export const booksData: Book[] = [
     author: "Fyodor Dostoevsky",
     coverImage:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8_Ncn8BAvACurh-KAFs4aSJ-doFR2TkzEOg&s",
-    price: 16000,
   },
   {
     id: 13,
@@ -104,7 +91,6 @@ export const booksData: Book[] = [
     author: "Leo Tolstoy",
     coverImage:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8_Ncn8BAvACurh-KAFs4aSJ-doFR2TkzEOg&s",
-    price: 17000,
   },
   {
     id: 14,
@@ -112,7 +98,6 @@ export const booksData: Book[] = [
     author: "Dante Alighieri",
     coverImage:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTENlgwk8aw_hekz5GuecTnz0pMNoYKib2cfw&s",
-    price: 18000,
   },
   {
     id: 15,
@@ -120,7 +105,6 @@ export const booksData: Book[] = [
     author: "Gabriel García Márquez",
     coverImage:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8_Ncn8BAvACurh-KAFs4aSJ-doFR2TkzEOg&s",
-    price: 19000,
   },
   {
     id: 16,
@@ -128,7 +112,6 @@ export const booksData: Book[] = [
     author: "Fyodor Dostoevsky",
     coverImage:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAN4xvt1h93zTvP8axVuNKy3VH5ZNBKOj-0g&s",
-    price: 21000,
   },
   {
     id: 17,
@@ -136,7 +119,6 @@ export const booksData: Book[] = [
     author: "Emily Brontë",
     coverImage:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTENlgwk8aw_hekz5GuecTnz0pMNoYKib2cfw&s",
-    price: 10000,
   },
   {
     id: 18,
@@ -144,7 +126,6 @@ export const booksData: Book[] = [
     author: "Gustave Flaubert",
     coverImage:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ78BrNxSfJ_VyKnmbBorhlHhnrnW0IPzbJbg&s",
-    price: 14000,
   },
   {
     id: 19,
@@ -152,7 +133,6 @@ export const booksData: Book[] = [
     author: "Homer",
     coverImage:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAN4xvt1h93zTvP8axVuNKy3VH5ZNBKOj-0g&s",
-    price: 9000,
   },
   {
     id: 20,
@@ -160,6 +140,5 @@ export const booksData: Book[] = [
     author: "Miguel de Cervantes",
     coverImage:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdpb3obEl2wgUkDd_yQ6oKIF_uJTHn515E3g&s",
-    price: 16000,
   },
 ];

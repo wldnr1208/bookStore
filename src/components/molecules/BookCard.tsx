@@ -16,7 +16,6 @@ const BookCard = ({ book }: Props) => {
         <ContentContainer>
           <Title>{book.title}</Title>
           <Author>{book.author}</Author>
-          <Price>{book.price.toLocaleString()} 원</Price>
         </ContentContainer>
       </CardLink>
     </Link>

@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## 주요 기능
 
-## Getting Started
+- **책 목록 페이지**
+  - 페이지네이션 적용 (한 페이지당 10개 항목)
+  - 제목 및 저자 기준 필터링 검색 기능
+- **책 상세 페이지**
+  - 책 카드 클릭 시 해당 책의 상세 정보를 확인
+  - 표지, 제목, 저자, 가격 및 편집 버튼 제공
+- **책 추가/제거 및 수량변경 기능**
+  - 책 상세페이지에서 수량 변경 및 삭제 기능
+- **반응형 디자인 & 모듈화된 컴포넌트**
+  - Emotion을 사용한 CSS-in-JS 스타일링
+  - 아토믹 디자인 패턴을 적용한 컴포넌트 구조
 
-First, run the development server:
+## 기술 스택
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Next.js**: 서버 사이드 렌더링(SSR) 및 페이지 라우팅
+- **React Query**: 비동기 데이터 페칭 및 캐싱 관리
+- **TypeScript**: 정적 타입 검사로 코드 안정성 확보
+- **Emotion**: CSS-in-JS 라이브러리로 컴포넌트 기반 스타일링
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 설치 방법
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **레포지토리 클론**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   ```bash
+   git clone <repository-url>
+   cd <repository-directory>
+   의존성 설치
+   bash
+   복사
+   npm install
+   ```
 
-## Learn More
+2. **개발서버 실행**
 
-To learn more about Next.js, take a look at the following resources:
+- npm install
+- npm run dev
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **빌드**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- npm run build
+- npm run start
 
-## Deploy on Vercel
+## 구현하지 못한 부분
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **책 추가 기능 관련 명확성 부족**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+  - 기능 구현 조건에서 책 추가 기능에 대한 요구사항이 명확하게 제시되지 않아, 구체적인 구현 방향을 설정하기 어려웠습니다.
+
+- **책 추가 페이지 구현 여부**
+
+  - 초기 분석 결과, 책 추가 페이지가 반드시 구현해야 하는 기능이 아니라고 판단하여, 우선순위에서 제외하였습니다.
+
+- **책 추가 기능 구현 아이디어 부재**
+  - 책을 추가하는 기능을 어떤 방식으로 구현할지에 대한 구체적인 아이디어가 떠오르지 않아, 해당 부분에 대한 설계 및 구현을 진행하지 못했습니다.

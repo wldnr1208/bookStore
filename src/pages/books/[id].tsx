@@ -1,4 +1,3 @@
-// pages/books/[id].tsx
 import { useRouter } from "next/router";
 import { useQuery } from "@tanstack/react-query";
 import styled from "@emotion/styled";
@@ -32,7 +31,6 @@ const BookDetailPage = () => {
     enabled: !!bookId,
   });
 
-  // 재고 수량 상태 (모의 데이터로 관리)
   const [quantity, setQuantity] = useState<number>(1);
 
   const handleDecrement = () => {
@@ -69,9 +67,6 @@ const BookDetailPage = () => {
         <Info>
           <Title>{book.title}</Title>
           <Author>{book.author}</Author>
-          <Price>{book.price.toLocaleString()} 원</Price>
-
-          {/* 재고 수량 및 조절 컨트롤 */}
           <InventorySection>
             <InventoryLabel>재고 수량:</InventoryLabel>
             <QuantityControls>

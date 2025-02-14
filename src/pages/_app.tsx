@@ -1,4 +1,3 @@
-// pages/_app.tsx
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import type { AppProps } from "next/app";
 import { Global, css } from "@emotion/react";
