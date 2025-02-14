@@ -4,9 +4,18 @@ import BookCard from "../molecules/BookCard";
 import Pagination from "../molecules/Pagination";
 import { useBooks } from "@/api/books";
 
-const BookList = () => {
+interface BookListProps {
+  searchTitle: string;
+  searchAuthor: string;
+}
+
+const BookList = ({ searchTitle, searchAuthor }: BookListProps) => {
   const [page, setPage] = useState(1);
-  const { data: books, isLoading, error } = useBooks(page);
+  const {
+    data: books,
+    isLoading,
+    error,
+  } = useBooks(page, searchTitle, searchAuthor);
 
   if (isLoading) return <LoadingText>로딩 중...</LoadingText>;
   if (error) return <ErrorText>책 목록을 불러오는 데 실패했습니다.</ErrorText>;
