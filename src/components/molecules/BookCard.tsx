@@ -1,5 +1,6 @@
 import { Book } from "@/types/book";
 import styled from "@emotion/styled";
+import Link from "next/link";
 
 interface Props {
   book: Book;
@@ -7,25 +8,30 @@ interface Props {
 
 const BookCard = ({ book }: Props) => {
   return (
-    <Card>
-      <ImageContainer>
-        <BookImage src={book.coverImage} alt={book.title} />
-      </ImageContainer>
-      <ContentContainer>
-        <Title>{book.title}</Title>
-        <Author>{book.author}</Author>
-        <Price>{book.price.toLocaleString()} 원</Price>
-      </ContentContainer>
-    </Card>
+    <Link href={`/books/${book.id}`} passHref legacyBehavior>
+      <CardLink>
+        <ImageContainer>
+          <BookImage src={book.coverImage} alt={book.title} />
+        </ImageContainer>
+        <ContentContainer>
+          <Title>{book.title}</Title>
+          <Author>{book.author}</Author>
+          <Price>{book.price.toLocaleString()} 원</Price>
+        </ContentContainer>
+      </CardLink>
+    </Link>
   );
 };
 
-const Card = styled.div`
+const CardLink = styled.a`
   background: #fff;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  display: block;
+  color: inherit;
 
   &:hover {
     transform: translateY(-5px);
